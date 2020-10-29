@@ -17,6 +17,9 @@ namespace CRUD_Demo
         SqlCommandBuilder scb;
         DataTable dt;
 
+        SqlConnection con = new SqlConnection("Data Source=VALY-DESKTOP\\SQLEXPRESS;Initial Catalog=Companie;Integrated Security=True");
+
+
         public useri()
         {
             InitializeComponent();
@@ -29,8 +32,7 @@ namespace CRUD_Demo
 
         private void handler_btnUpdate(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=Companie;Integrated Security=True");
-            sda = new SqlDataAdapter("");
+            
 
 
         }
@@ -42,7 +44,37 @@ namespace CRUD_Demo
 
         private void handler_btnAdd(object sender, EventArgs e)
         {
+            con.Open();
+            string insert_query = "INSERT INTO Persoane ( nume,prenume,email) VALUES (@nume,@prenume,@email) SELECT SCOPE_IDENTITY()";
+            SqlCommand cmd = new SqlCommand(insert_query, con);
+            cmd.Parameters.AddWithValue("@nume", txtNume.Text);
+            cmd.Parameters.AddWithValue("@prenume", txtPrenume.Text);
+            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+            cmd.ExecuteNonQuery();
 
+            con.Close();
+            display_data();
+
+            MessageBox.Show("Userul a fost adaugat cu succes!");
+
+        }
+
+        private void handler_btnDelete(object sender, EventArgs e)
+        {
+
+        }
+
+        public void display_data()
+        {
+            string select_string = "SELECT nume,prenume, email FROM Persoane";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(select_string, con);
+            cmd.ExecuteNonQuery();
+            dt = new DataTable();
+            sda = new SqlDataAdapter(cmd);
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            con.Close();
 
         }
     }
