@@ -324,7 +324,16 @@ SELECT Id, Nume, Prenume, Email, Telefon, Adresa FROM Persoane WHERE (Id = @Id)<
               <Mapping SourceColumn="Telefon" DataSetColumn="Telefon" />
               <Mapping SourceColumn="Adresa" DataSetColumn="Adresa" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="CompanieConnectionString (Settings)" DbObjectName="Companie.dbo.Persoane" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Nume, Prenume, Email, Telefon, Adresa FROM dbo.Persoane</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProduseTableAdapter" GeneratorDataComponentClassName="ProduseTableAdapter" Name="Produse" UserDataComponentName="ProduseTableAdapter">
             <MainSource>
@@ -397,7 +406,7 @@ SELECT Id, CodPRodus, Descriere, UM, PretUnitar FROM Produse WHERE (Id = @Id)</C
   <xs:element name="CompanieDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CompanieDataSet" msprop:Generator_UserDSName="CompanieDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Angajati" msprop:Generator_TableClassName="AngajatiDataTable" msprop:Generator_TableVarName="tableAngajati" msprop:Generator_TablePropName="Angajati" msprop:Generator_RowDeletingName="AngajatiRowDeleting" msprop:Generator_RowChangingName="AngajatiRowChanging" msprop:Generator_RowEvHandlerName="AngajatiRowChangeEventHandler" msprop:Generator_RowDeletedName="AngajatiRowDeleted" msprop:Generator_UserTableName="Angajati" msprop:Generator_RowChangedName="AngajatiRowChanged" msprop:Generator_RowEvArgName="AngajatiRowChangeEvent" msprop:Generator_RowClassName="AngajatiRow">
+        <xs:element name="Angajati" msprop:Generator_TableClassName="AngajatiDataTable" msprop:Generator_TableVarName="tableAngajati" msprop:Generator_RowChangedName="AngajatiRowChanged" msprop:Generator_TablePropName="Angajati" msprop:Generator_RowDeletingName="AngajatiRowDeleting" msprop:Generator_RowChangingName="AngajatiRowChanging" msprop:Generator_RowEvHandlerName="AngajatiRowChangeEventHandler" msprop:Generator_RowDeletedName="AngajatiRowDeleted" msprop:Generator_RowClassName="AngajatiRow" msprop:Generator_UserTableName="Angajati" msprop:Generator_RowEvArgName="AngajatiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -406,7 +415,7 @@ SELECT Id, CodPRodus, Descriere, UM, PretUnitar FROM Produse WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Clienti" msprop:Generator_TableClassName="ClientiDataTable" msprop:Generator_TableVarName="tableClienti" msprop:Generator_TablePropName="Clienti" msprop:Generator_RowDeletingName="ClientiRowDeleting" msprop:Generator_RowChangingName="ClientiRowChanging" msprop:Generator_RowEvHandlerName="ClientiRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientiRowDeleted" msprop:Generator_UserTableName="Clienti" msprop:Generator_RowChangedName="ClientiRowChanged" msprop:Generator_RowEvArgName="ClientiRowChangeEvent" msprop:Generator_RowClassName="ClientiRow">
+        <xs:element name="Clienti" msprop:Generator_TableClassName="ClientiDataTable" msprop:Generator_TableVarName="tableClienti" msprop:Generator_RowChangedName="ClientiRowChanged" msprop:Generator_TablePropName="Clienti" msprop:Generator_RowDeletingName="ClientiRowDeleting" msprop:Generator_RowChangingName="ClientiRowChanging" msprop:Generator_RowEvHandlerName="ClientiRowChangeEventHandler" msprop:Generator_RowDeletedName="ClientiRowDeleted" msprop:Generator_RowClassName="ClientiRow" msprop:Generator_UserTableName="Clienti" msprop:Generator_RowEvArgName="ClientiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -415,7 +424,7 @@ SELECT Id, CodPRodus, Descriere, UM, PretUnitar FROM Produse WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Comenzi" msprop:Generator_TableClassName="ComenziDataTable" msprop:Generator_TableVarName="tableComenzi" msprop:Generator_TablePropName="Comenzi" msprop:Generator_RowDeletingName="ComenziRowDeleting" msprop:Generator_RowChangingName="ComenziRowChanging" msprop:Generator_RowEvHandlerName="ComenziRowChangeEventHandler" msprop:Generator_RowDeletedName="ComenziRowDeleted" msprop:Generator_UserTableName="Comenzi" msprop:Generator_RowChangedName="ComenziRowChanged" msprop:Generator_RowEvArgName="ComenziRowChangeEvent" msprop:Generator_RowClassName="ComenziRow">
+        <xs:element name="Comenzi" msprop:Generator_TableClassName="ComenziDataTable" msprop:Generator_TableVarName="tableComenzi" msprop:Generator_RowChangedName="ComenziRowChanged" msprop:Generator_TablePropName="Comenzi" msprop:Generator_RowDeletingName="ComenziRowDeleting" msprop:Generator_RowChangingName="ComenziRowChanging" msprop:Generator_RowEvHandlerName="ComenziRowChangeEventHandler" msprop:Generator_RowDeletedName="ComenziRowDeleted" msprop:Generator_RowClassName="ComenziRow" msprop:Generator_UserTableName="Comenzi" msprop:Generator_RowEvArgName="ComenziRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -425,7 +434,7 @@ SELECT Id, CodPRodus, Descriere, UM, PretUnitar FROM Produse WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Departament" msprop:Generator_TableClassName="DepartamentDataTable" msprop:Generator_TableVarName="tableDepartament" msprop:Generator_TablePropName="Departament" msprop:Generator_RowDeletingName="DepartamentRowDeleting" msprop:Generator_RowChangingName="DepartamentRowChanging" msprop:Generator_RowEvHandlerName="DepartamentRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartamentRowDeleted" msprop:Generator_UserTableName="Departament" msprop:Generator_RowChangedName="DepartamentRowChanged" msprop:Generator_RowEvArgName="DepartamentRowChangeEvent" msprop:Generator_RowClassName="DepartamentRow">
+        <xs:element name="Departament" msprop:Generator_TableClassName="DepartamentDataTable" msprop:Generator_TableVarName="tableDepartament" msprop:Generator_RowChangedName="DepartamentRowChanged" msprop:Generator_TablePropName="Departament" msprop:Generator_RowDeletingName="DepartamentRowDeleting" msprop:Generator_RowChangingName="DepartamentRowChanging" msprop:Generator_RowEvHandlerName="DepartamentRowChangeEventHandler" msprop:Generator_RowDeletedName="DepartamentRowDeleted" msprop:Generator_RowClassName="DepartamentRow" msprop:Generator_UserTableName="Departament" msprop:Generator_RowEvArgName="DepartamentRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -446,7 +455,7 @@ SELECT Id, CodPRodus, Descriere, UM, PretUnitar FROM Produse WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DetaliiComenzi" msprop:Generator_TableClassName="DetaliiComenziDataTable" msprop:Generator_TableVarName="tableDetaliiComenzi" msprop:Generator_TablePropName="DetaliiComenzi" msprop:Generator_RowDeletingName="DetaliiComenziRowDeleting" msprop:Generator_RowChangingName="DetaliiComenziRowChanging" msprop:Generator_RowEvHandlerName="DetaliiComenziRowChangeEventHandler" msprop:Generator_RowDeletedName="DetaliiComenziRowDeleted" msprop:Generator_UserTableName="DetaliiComenzi" msprop:Generator_RowChangedName="DetaliiComenziRowChanged" msprop:Generator_RowEvArgName="DetaliiComenziRowChangeEvent" msprop:Generator_RowClassName="DetaliiComenziRow">
+        <xs:element name="DetaliiComenzi" msprop:Generator_TableClassName="DetaliiComenziDataTable" msprop:Generator_TableVarName="tableDetaliiComenzi" msprop:Generator_RowChangedName="DetaliiComenziRowChanged" msprop:Generator_TablePropName="DetaliiComenzi" msprop:Generator_RowDeletingName="DetaliiComenziRowDeleting" msprop:Generator_RowChangingName="DetaliiComenziRowChanging" msprop:Generator_RowEvHandlerName="DetaliiComenziRowChangeEventHandler" msprop:Generator_RowDeletedName="DetaliiComenziRowDeleted" msprop:Generator_RowClassName="DetaliiComenziRow" msprop:Generator_UserTableName="DetaliiComenzi" msprop:Generator_RowEvArgName="DetaliiComenziRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdComanda" msprop:Generator_ColumnVarNameInTable="columnIdComanda" msprop:Generator_ColumnPropNameInRow="IdComanda" msprop:Generator_ColumnPropNameInTable="IdComandaColumn" msprop:Generator_UserColumnName="IdComanda" type="xs:int" />
@@ -456,7 +465,7 @@ SELECT Id, CodPRodus, Descriere, UM, PretUnitar FROM Produse WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Persoane" msprop:Generator_TableClassName="PersoaneDataTable" msprop:Generator_TableVarName="tablePersoane" msprop:Generator_TablePropName="Persoane" msprop:Generator_RowDeletingName="PersoaneRowDeleting" msprop:Generator_RowChangingName="PersoaneRowChanging" msprop:Generator_RowEvHandlerName="PersoaneRowChangeEventHandler" msprop:Generator_RowDeletedName="PersoaneRowDeleted" msprop:Generator_UserTableName="Persoane" msprop:Generator_RowChangedName="PersoaneRowChanged" msprop:Generator_RowEvArgName="PersoaneRowChangeEvent" msprop:Generator_RowClassName="PersoaneRow">
+        <xs:element name="Persoane" msprop:Generator_TableClassName="PersoaneDataTable" msprop:Generator_TableVarName="tablePersoane" msprop:Generator_RowChangedName="PersoaneRowChanged" msprop:Generator_TablePropName="Persoane" msprop:Generator_RowDeletingName="PersoaneRowDeleting" msprop:Generator_RowChangingName="PersoaneRowChanging" msprop:Generator_RowEvHandlerName="PersoaneRowChangeEventHandler" msprop:Generator_RowDeletedName="PersoaneRowDeleted" msprop:Generator_RowClassName="PersoaneRow" msprop:Generator_UserTableName="Persoane" msprop:Generator_RowEvArgName="PersoaneRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -498,7 +507,7 @@ SELECT Id, CodPRodus, Descriere, UM, PretUnitar FROM Produse WHERE (Id = @Id)</C
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Produse" msprop:Generator_TableClassName="ProduseDataTable" msprop:Generator_TableVarName="tableProduse" msprop:Generator_TablePropName="Produse" msprop:Generator_RowDeletingName="ProduseRowDeleting" msprop:Generator_RowChangingName="ProduseRowChanging" msprop:Generator_RowEvHandlerName="ProduseRowChangeEventHandler" msprop:Generator_RowDeletedName="ProduseRowDeleted" msprop:Generator_UserTableName="Produse" msprop:Generator_RowChangedName="ProduseRowChanged" msprop:Generator_RowEvArgName="ProduseRowChangeEvent" msprop:Generator_RowClassName="ProduseRow">
+        <xs:element name="Produse" msprop:Generator_TableClassName="ProduseDataTable" msprop:Generator_TableVarName="tableProduse" msprop:Generator_RowChangedName="ProduseRowChanged" msprop:Generator_TablePropName="Produse" msprop:Generator_RowDeletingName="ProduseRowDeleting" msprop:Generator_RowChangingName="ProduseRowChanging" msprop:Generator_RowEvHandlerName="ProduseRowChangeEventHandler" msprop:Generator_RowDeletedName="ProduseRowDeleted" msprop:Generator_RowClassName="ProduseRow" msprop:Generator_UserTableName="Produse" msprop:Generator_RowEvArgName="ProduseRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -556,12 +565,12 @@ SELECT Id, CodPRodus, Descriere, UM, PretUnitar FROM Produse WHERE (Id = @Id)</C
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Angajati_Departament" msdata:parent="Departament" msdata:child="Angajati" msdata:parentkey="Id" msdata:childkey="IdDepartament" msprop:Generator_UserChildTable="Angajati" msprop:Generator_ChildPropName="GetAngajatiRows" msprop:Generator_UserRelationName="FK_Angajati_Departament" msprop:Generator_RelationVarName="relationFK_Angajati_Departament" msprop:Generator_UserParentTable="Departament" msprop:Generator_ParentPropName="DepartamentRow" />
-      <msdata:Relationship name="FK_Angajati_Persoane" msdata:parent="Persoane" msdata:child="Angajati" msdata:parentkey="Id" msdata:childkey="IdPersoana" msprop:Generator_UserChildTable="Angajati" msprop:Generator_ChildPropName="GetAngajatiRows" msprop:Generator_UserRelationName="FK_Angajati_Persoane" msprop:Generator_RelationVarName="relationFK_Angajati_Persoane" msprop:Generator_UserParentTable="Persoane" msprop:Generator_ParentPropName="PersoaneRow" />
-      <msdata:Relationship name="FK_Clienti_Persoane" msdata:parent="Persoane" msdata:child="Clienti" msdata:parentkey="Id" msdata:childkey="IdPersoana" msprop:Generator_UserChildTable="Clienti" msprop:Generator_ChildPropName="GetClientiRows" msprop:Generator_UserRelationName="FK_Clienti_Persoane" msprop:Generator_RelationVarName="relationFK_Clienti_Persoane" msprop:Generator_UserParentTable="Persoane" msprop:Generator_ParentPropName="PersoaneRow" />
-      <msdata:Relationship name="FK_Comenzi_Persoane" msdata:parent="Persoane" msdata:child="Comenzi" msdata:parentkey="Id" msdata:childkey="IdPersoana" msprop:Generator_UserChildTable="Comenzi" msprop:Generator_ChildPropName="GetComenziRows" msprop:Generator_UserRelationName="FK_Comenzi_Persoane" msprop:Generator_RelationVarName="relationFK_Comenzi_Persoane" msprop:Generator_UserParentTable="Persoane" msprop:Generator_ParentPropName="PersoaneRow" />
-      <msdata:Relationship name="FK_DetaliiComenzi_Comenzi" msdata:parent="Comenzi" msdata:child="DetaliiComenzi" msdata:parentkey="Id" msdata:childkey="IdComanda" msprop:Generator_UserChildTable="DetaliiComenzi" msprop:Generator_ChildPropName="GetDetaliiComenziRows" msprop:Generator_UserRelationName="FK_DetaliiComenzi_Comenzi" msprop:Generator_ParentPropName="ComenziRow" msprop:Generator_RelationVarName="relationFK_DetaliiComenzi_Comenzi" msprop:Generator_UserParentTable="Comenzi" />
-      <msdata:Relationship name="FK_DetaliiComenzi_Produse" msdata:parent="Produse" msdata:child="DetaliiComenzi" msdata:parentkey="Id" msdata:childkey="IdProdus" msprop:Generator_UserChildTable="DetaliiComenzi" msprop:Generator_ChildPropName="GetDetaliiComenziRows" msprop:Generator_UserRelationName="FK_DetaliiComenzi_Produse" msprop:Generator_RelationVarName="relationFK_DetaliiComenzi_Produse" msprop:Generator_UserParentTable="Produse" msprop:Generator_ParentPropName="ProduseRow" />
+      <msdata:Relationship name="FK_Angajati_Departament" msdata:parent="Departament" msdata:child="Angajati" msdata:parentkey="Id" msdata:childkey="IdDepartament" msprop:Generator_UserChildTable="Angajati" msprop:Generator_ChildPropName="GetAngajatiRows" msprop:Generator_UserRelationName="FK_Angajati_Departament" msprop:Generator_ParentPropName="DepartamentRow" msprop:Generator_RelationVarName="relationFK_Angajati_Departament" msprop:Generator_UserParentTable="Departament" />
+      <msdata:Relationship name="FK_Angajati_Persoane" msdata:parent="Persoane" msdata:child="Angajati" msdata:parentkey="Id" msdata:childkey="IdPersoana" msprop:Generator_UserChildTable="Angajati" msprop:Generator_ChildPropName="GetAngajatiRows" msprop:Generator_UserRelationName="FK_Angajati_Persoane" msprop:Generator_ParentPropName="PersoaneRow" msprop:Generator_RelationVarName="relationFK_Angajati_Persoane" msprop:Generator_UserParentTable="Persoane" />
+      <msdata:Relationship name="FK_Clienti_Persoane" msdata:parent="Persoane" msdata:child="Clienti" msdata:parentkey="Id" msdata:childkey="IdPersoana" msprop:Generator_UserChildTable="Clienti" msprop:Generator_ChildPropName="GetClientiRows" msprop:Generator_UserRelationName="FK_Clienti_Persoane" msprop:Generator_ParentPropName="PersoaneRow" msprop:Generator_RelationVarName="relationFK_Clienti_Persoane" msprop:Generator_UserParentTable="Persoane" />
+      <msdata:Relationship name="FK_Comenzi_Persoane" msdata:parent="Persoane" msdata:child="Comenzi" msdata:parentkey="Id" msdata:childkey="IdPersoana" msprop:Generator_UserChildTable="Comenzi" msprop:Generator_ChildPropName="GetComenziRows" msprop:Generator_UserRelationName="FK_Comenzi_Persoane" msprop:Generator_ParentPropName="PersoaneRow" msprop:Generator_RelationVarName="relationFK_Comenzi_Persoane" msprop:Generator_UserParentTable="Persoane" />
+      <msdata:Relationship name="FK_DetaliiComenzi_Comenzi" msdata:parent="Comenzi" msdata:child="DetaliiComenzi" msdata:parentkey="Id" msdata:childkey="IdComanda" msprop:Generator_UserChildTable="DetaliiComenzi" msprop:Generator_ChildPropName="GetDetaliiComenziRows" msprop:Generator_UserRelationName="FK_DetaliiComenzi_Comenzi" msprop:Generator_RelationVarName="relationFK_DetaliiComenzi_Comenzi" msprop:Generator_UserParentTable="Comenzi" msprop:Generator_ParentPropName="ComenziRow" />
+      <msdata:Relationship name="FK_DetaliiComenzi_Produse" msdata:parent="Produse" msdata:child="DetaliiComenzi" msdata:parentkey="Id" msdata:childkey="IdProdus" msprop:Generator_UserChildTable="DetaliiComenzi" msprop:Generator_ChildPropName="GetDetaliiComenziRows" msprop:Generator_UserRelationName="FK_DetaliiComenzi_Produse" msprop:Generator_ParentPropName="ProduseRow" msprop:Generator_RelationVarName="relationFK_DetaliiComenzi_Produse" msprop:Generator_UserParentTable="Produse" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
